@@ -27,7 +27,7 @@ const Login = () => {
         margin: "auto",
       }}
     >
-      {isError ? <alert>{errorMessgae}</alert> : null}
+      {/* {isError ? <alert>{errorMessgae}</alert> : null} */}
       <h3 style={{ color: "black" }}>Login</h3>
       <div style={{ margin: "20px auto" }}>
         <input
