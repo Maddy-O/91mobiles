@@ -7,7 +7,7 @@ const getLocalData = (key) => {
 
 const setLocalData = (key, value) => {
   if (key && value) {
-    localStorage.setItem(key, value);
+    localStorage.setItem(key, JSON.stringify(value));
   }
 };
 

@@ -26,7 +26,7 @@ const reducer = (state = initialState, action) => {
     case types.LOGIN_USER_SUCCESS:
       setLocalData("token", payload.token);
       const { name } = payload.user;
-      setLocalData("user", name);
+      setLocalData("user", payload.user);
       return {
         ...state,
         isAuth: true,

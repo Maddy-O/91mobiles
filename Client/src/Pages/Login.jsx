@@ -1,9 +1,10 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { loginUser } from "../Redux/AuthReducer/action";
 import { useNavigate } from "react-router-dom";
 
 const Login = () => {
+  const [name, setName] = useState("");
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const dispatch = useDispatch();
@@ -12,12 +13,16 @@ const Login = () => {
   const navigate = useNavigate();
 
   const handlesubmit = () => {
-    const loginobj = { email, password };
+    const loginobj = { name, email, password };
     // console.log(isError, errorMessgae);
     // console.log(loginobj);
     dispatch(loginUser(loginobj));
     navigate("/", { replace: true });
   };
+
+  useEffect(()=>{
+
+  },[dispatch])
 
   return (
     <div
@@ -27,8 +32,23 @@ const Login = () => {
         margin: "auto",
       }}
     >
-      {/* {isError ? <alert>{errorMessgae}</alert> : null} */}
+      {isError ? <alert>{errorMessgae}</alert> : null}
       <h3 style={{ color: "black" }}>Login</h3>
+      <div style={{ margin: "20px auto" }}>
+        <input
+          style={{
+            border: "none",
+            boxShadow: "2px 2px 2px 2px black",
+            color: "black",
+            padding: "10px",
+            width: "50%",
+          }}
+          type="text"
+          placeholder="name"
+          value={name}
+          onChange={(e) => setName(e.target.value)}
+        />
+      </div>
       <div style={{ margin: "20px auto" }}>
         <input
           style={{

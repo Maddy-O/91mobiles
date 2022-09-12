@@ -1,9 +1,8 @@
 import React from "react";
-import { useSelector } from "react-redux";
 
 const Home = () => {
-  const userDetail = useSelector((state) => state.AuthReducer.details);
-  console.log(userDetail);
+  const data = JSON.parse(localStorage.getItem("user"));
+
   return (
     <div
       style={{
@@ -22,7 +21,7 @@ const Home = () => {
             width: "50%",
           }}
         >
-          Email :{userDetail[0].email}
+          Name : {data.name}
         </div>
       </div>
       <div style={{ margin: "20px auto" }}>
@@ -35,7 +34,7 @@ const Home = () => {
             width: "50%",
           }}
         >
-          Name : {userDetail[0].name}
+          Email : {data.email}
         </div>
       </div>
     </div>

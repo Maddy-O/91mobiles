@@ -23,6 +23,7 @@ const loginUser = (params) => (dispatch) => {
   return axios
     .post("https://murmuring-cove-41529.herokuapp.com/login", params)
     .then((res) => {
+      console.log(res.data);
       dispatch({ type: types.LOGIN_USER_SUCCESS, payload: res.data });
       return types.LOGIN_USER_SUCCESS;
     })
