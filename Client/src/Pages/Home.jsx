@@ -12,7 +12,6 @@ const Home = () => {
         margin: "auto",
       }}
     >
-      <h3 style={{ color: "black" }}>Login</h3>
       <div style={{ margin: "20px auto" }}>
         <div
           style={{
